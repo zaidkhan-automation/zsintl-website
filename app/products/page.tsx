@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 
 const highlightedModels = [
   {
@@ -84,7 +87,39 @@ const allModels = [
 export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-slate-950 pb-16 pt-8 text-slate-50">
-      <div className="mx-auto max-w-6xl px-4">
+      {/* NAVBAR – synced with homepage */}
+      <header className="sticky top-0 z-30 border-b border-slate-900 bg-slate-950/90 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
+          {/* Logo */}
+          <div className="flex items-center gap-2">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-sky-500 text-sm font-bold text-slate-950">
+              LB
+            </div>
+            <span className="text-sm font-semibold tracking-wide">
+              LeatherBrand
+            </span>
+          </div>
+
+          {/* Home / Products only */}
+          <nav className="flex items-center gap-4 text-xs font-medium text-slate-300 sm:gap-6">
+            <Link href="/" className="hover:text-white">
+              Home
+            </Link>
+            <Link href="/products" className="hover:text-white">
+              Products
+            </Link>
+          </nav>
+
+          <Link
+            href="/#contact"
+            className="rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-slate-950 shadow-md shadow-sky-500/30 hover:bg-sky-400 md:text-sm"
+          >
+            Get quote
+          </Link>
+        </div>
+      </header>
+
+      <div className="mx-auto max-w-6xl px-4 pt-6">
         {/* Page title */}
         <header className="mb-10 flex flex-col gap-2">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-400">
@@ -218,4 +253,3 @@ export default function ProductsPage() {
     </main>
   );
 }
-

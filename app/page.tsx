@@ -39,7 +39,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-slate-950 text-slate-50">
       {/* ───────────────── NAVBAR ───────────────── */}
       <header className="sticky top-0 z-30 border-b border-slate-900 bg-slate-950/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-sky-500 text-sm font-bold text-slate-950">
@@ -50,20 +50,14 @@ export default function HomePage() {
             </span>
           </div>
 
-          {/* Primary navigation – matches sketch labels */}
-          <nav className="hidden gap-6 text-xs font-medium text-slate-300 md:flex">
-            <a href="#hero" className="hover:text-white">
-              About us
-            </a>
+          {/* Primary navigation – synced Home / Products only */}
+          <nav className="flex items-center gap-4 text-xs font-medium text-slate-300 sm:gap-6">
+            <Link href="/" className="hover:text-white">
+              Home
+            </Link>
             <Link href="/products" className="hover:text-white">
               Products
             </Link>
-            <a href="#infrastructure" className="hover:text-white">
-              Infrastructure
-            </a>
-            <a href="#contact" className="hover:text-white">
-              Contact
-            </a>
           </nav>
 
           {/* Get quote button on right */}

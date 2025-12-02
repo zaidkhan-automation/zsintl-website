@@ -85,7 +85,6 @@ export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-slate-950 pb-16 pt-8 text-slate-50">
       <div className="mx-auto max-w-6xl px-4">
-
         {/* PAGE TITLE */}
         <header className="mb-10 flex flex-col gap-2">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-400">
@@ -139,7 +138,9 @@ export default function ProductsPage() {
                     <div className="grid grid-cols-3 gap-3 pt-3">
                       <div>
                         <p className="font-semibold text-slate-200">Use</p>
-                        <p className="text-[11px] leading-snug">{model.use}</p>
+                        <p className="text-[11px] leading-snug">
+                          {model.use}
+                        </p>
                       </div>
                       <div>
                         <p className="font-semibold text-slate-200">Surface</p>
@@ -216,6 +217,71 @@ export default function ProductsPage() {
           </div>
         </section>
       </div>
+
+      {/* ───────────────── ENQUIRY SECTION (same pattern as other pages) ───────────────── */}
+      <section id="contact" className="border-b border-sky-500 bg-sky-900 py-14 mt-12">
+        <div className="mx-auto max-w-6xl space-y-10 px-4">
+          <h2 className="text-2xl font-semibold text-slate-50">ENQUIRY</h2>
+
+          {/* Form */}
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <input
+              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500"
+              placeholder="Email"
+            />
+            <input
+              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500"
+              placeholder="Company name"
+            />
+            <input
+              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500"
+              placeholder="Quantity required"
+            />
+            <input
+              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500"
+              placeholder="Country of establishment"
+            />
+            <input
+              className="md:col-span-2 rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500"
+              placeholder="Phone number"
+            />
+          </div>
+
+          {/* Bottom row: Panels + Button + Map */}
+          <div className="grid grid-cols-1 gap-8 border-t border-sky-500 pt-8 md:grid-cols-3">
+            <div className="space-y-4 text-sm">
+              <h3 className="mb-2 text-sm font-semibold text-slate-50">
+                Panels / shortcuts
+              </h3>
+              <button className="w-full rounded-lg border border-sky-500 bg-slate-900 px-4 py-3 text-left text-slate-200">
+                Certificates
+              </button>
+              <button className="w-full rounded-lg border border-sky-500 bg-slate-900 px-4 py-3 text-left text-slate-200">
+                Contact info
+              </button>
+            </div>
+
+            <div className="flex items-center justify-center">
+              <button className="w-full rounded-full bg-sky-500 px-8 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-sky-500/40 hover:bg-sky-400 md:w-auto">
+                Get quote
+              </button>
+            </div>
+
+            <div className="overflow-hidden rounded-xl border border-sky-500 bg-slate-900">
+              <iframe
+                title="Kanpur map"
+                src="https://www.google.com/maps?q=Kanpur&output=embed"
+                loading="lazy"
+                className="h-56 w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-sky-900 py-6 text-center text-xs text-slate-500">
+        © {new Date().getFullYear()} ZS International · Safety footwear range.
+      </footer>
     </main>
   );
 }

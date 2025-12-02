@@ -2,8 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const heroSrc = "/hero-panel.webp"; // change if you have a dedicated about-hero image
-const videoPoster = "/leather-winter.webp"; // replace with real poster if available
+const heroSrc = "/hero-panel.webp"; 
+const videoPoster = "/leather-winter.webp";
 
 export default function IntroductionPage() {
   return (
@@ -19,10 +19,8 @@ export default function IntroductionPage() {
             className="object-cover"
           />
 
-          {/* soft overlay for readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/60" />
 
-          {/* overlay content container (center / top-left responsive) */}
           <div className="absolute inset-0 mx-auto max-w-6xl px-6">
             <div className="absolute left-6 right-6 top-8 md:top-14">
               <p className="text-sm font-semibold uppercase tracking-wider text-sky-300">
@@ -101,7 +99,6 @@ export default function IntroductionPage() {
             </Link>
           </div>
 
-          {/* quick timeline / stats */}
           <div className="space-y-3 text-sm text-slate-300">
             <div className="rounded-lg bg-slate-900/40 p-4">
               <div className="text-xs font-semibold text-sky-300">2020</div>
@@ -119,13 +116,12 @@ export default function IntroductionPage() {
         </div>
       </section>
 
-      {/* VIDEO STRIP (EDGE-TO-EDGE feel inside centered container) */}
+      {/* VIDEO STRIP */}
       <section className="border-t border-slate-800 bg-slate-900/50">
         <div className="mx-auto max-w-6xl px-6 py-12">
           <h3 className="mb-6 text-lg font-semibold text-white">Factory video</h3>
 
           <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
-            {/* placeholder poster — replace with embedded <video> or <iframe> as needed */}
             <div className="aspect-video bg-black">
               <Image
                 src={videoPoster}
@@ -151,7 +147,7 @@ export default function IntroductionPage() {
         </div>
       </section>
 
-      {/* LONG FORM CONTENT (TEXT / bullets / images) */}
+      {/* LONG FORM CONTENT */}
       <section className="mx-auto max-w-6xl px-6 py-12">
         <h3 className="mb-4 text-xl font-semibold text-white">Details & capabilities</h3>
 
@@ -180,6 +176,45 @@ export default function IntroductionPage() {
           </aside>
         </div>
       </section>
+
+      {/* ─────────────────────────── ENQUIRY (ADDED) ─────────────────────────── */}
+      <section id="contact" className="border-b border-sky-500 bg-sky-900 py-14">
+        <div className="mx-auto max-w-6xl space-y-10 px-4">
+          <h2 className="text-2xl font-semibold text-slate-50">ENQUIRY</h2>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <input className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none" placeholder="Email" />
+            <input className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none" placeholder="Company name" />
+            <input className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none" placeholder="Quantity required" />
+            <input className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none" placeholder="Country of establishment" />
+            <input className="md:col-span-2 rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none" placeholder="Phone number" />
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 border-t border-sky-500 pt-8 md:grid-cols-3">
+            <div className="space-y-4 text-sm">
+              <h3 className="mb-2 text-sm font-semibold text-slate-50">Panels / shortcuts</h3>
+              <button className="w-full rounded-lg border border-sky-500 bg-slate-900 px-4 py-3 text-left text-slate-200">Certificates</button>
+              <button className="w-full rounded-lg border border-sky-500 bg-slate-900 px-4 py-3 text-left text-slate-200">Contact info</button>
+            </div>
+
+            <div className="flex items-center justify-center">
+              <button className="w-full md:w-auto rounded-full bg-sky-500 px-8 py-3 text-sm font-semibold text-slate-950 hover:bg-sky-400 shadow-lg">
+                Get quote
+              </button>
+            </div>
+
+            <div className="overflow-hidden rounded-xl border border-sky-500 bg-slate-900">
+              <iframe
+                title="Kanpur map"
+                src="https://www.google.com/maps?q=Kanpur&output=embed"
+                loading="lazy"
+                className="h-56 w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* ───────────────────────── END ENQUIRY ───────────────────────── */}
 
       <footer className="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
         © {new Date().getFullYear()} ZS International · Export-focused manufacturing.

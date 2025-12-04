@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-900 bg-gradient-to-r from-sky-700/95 via-sky-600/95 to-sky-800/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-        
+
         {/* Logo */}
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-300 text-sm font-bold text-slate-900 shadow">
@@ -84,6 +84,11 @@ export default function Navbar() {
               </div>
             )}
           </div>
+
+          {/* CONTACT NAV BUTTON */}
+          <Link href="/contact" className="hover:text-white">
+            Contact
+          </Link>
         </nav>
 
         {/* CTA BUTTON */}

@@ -8,11 +8,11 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-900 bg-gradient-to-r from-sky-700/95 via-sky-600/95 to-sky-800/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-3 py-3 sm:px-4">
 
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-300 text-sm font-bold text-slate-900 shadow">
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-sky-300 text-xs font-bold text-slate-900 shadow sm:h-10 sm:w-10 sm:text-sm">
             LB
           </div>
           <Link
@@ -24,7 +24,7 @@ export default function Navbar() {
         </div>
 
         {/* NAVIGATION */}
-        <nav className="flex items-center gap-6 text-sm font-medium text-slate-100">
+        <nav className="flex items-center gap-4 text-xs font-medium text-slate-100 sm:gap-6 sm:text-sm">
 
           <Link href="/" className="hover:text-white">
             Home
@@ -59,7 +59,7 @@ export default function Navbar() {
             {openAbout && (
               <div
                 onMouseLeave={() => setOpenAbout(false)}
-                className="absolute left-0 mt-2 w-48 rounded-md border border-slate-700 bg-slate-900/95 shadow-xl"
+                className="absolute right-0 mt-2 w-48 rounded-md border border-slate-700 bg-slate-900/95 shadow-xl"
               >
                 <Link
                   href="/about/introduction"
@@ -85,7 +85,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* CONTACT NAV BUTTON */}
+          {/* CONTACT NAV */}
           <Link href="/contact" className="hover:text-white">
             Contact
           </Link>
@@ -94,7 +94,7 @@ export default function Navbar() {
         {/* CTA BUTTON */}
         <a
           href="#contact"
-          className="rounded-full bg-sky-300 px-5 py-2 text-sm font-semibold text-slate-900 shadow-md hover:bg-sky-200"
+          className="rounded-full bg-sky-300 px-4 py-2 text-xs font-semibold text-slate-900 shadow-md hover:bg-sky-200 sm:px-5 sm:text-sm"
         >
           Get quote
         </a>

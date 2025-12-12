@@ -2,8 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const heroSrc = "/hero-panel.webp"; 
-const videoPoster = "/leather-winter.webp";
+const heroSrc = "/tool.jpeg";
+const videoPoster = "/brownleather.mp4";
 
 export default function IntroductionPage() {
   return (
@@ -123,25 +123,12 @@ export default function IntroductionPage() {
 
           <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
             <div className="aspect-video bg-black">
-              <Image
+              {/* videoPoster ab video ke रूप में, Image नहीं */}
+              <video
                 src={videoPoster}
-                alt="Factory video poster"
-                fill
-                className="object-cover opacity-80"
+                controls
+                className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="rounded-full bg-white/10 p-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-10 w-10 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-5.197-3.023A1 1 0 008 9.06v5.88a1 1 0 001.555.832l5.197-3.023a1 1 0 000-1.664z" />
-                  </svg>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -149,7 +136,9 @@ export default function IntroductionPage() {
 
       {/* LONG FORM CONTENT */}
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <h3 className="mb-4 text-xl font-semibold text-white">Details & capabilities</h3>
+        <h3 className="mb-4 text-xl font-semibold text-white">
+          Details & capabilities
+        </h3>
 
         <div className="grid gap-8 md:grid-cols-3">
           <div className="col-span-2 space-y-4 text-sm text-slate-300">
@@ -169,32 +158,58 @@ export default function IntroductionPage() {
 
           <aside className="rounded-lg border border-slate-800 bg-slate-900/40 p-4 text-sm text-slate-300">
             <div className="font-semibold text-white">Need a sample?</div>
-            <div className="mt-2 text-sm">Request a sample pack and lead time estimate.</div>
-            <Link href="#contact" className="mt-4 inline-block rounded bg-sky-300 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-sky-200">
+            <div className="mt-2 text-sm">
+              Request a sample pack and lead time estimate.
+            </div>
+            <Link
+              href="#contact"
+              className="mt-4 inline-block rounded bg-sky-300 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-sky-200"
+            >
               Request quote
             </Link>
           </aside>
         </div>
       </section>
 
-      {/* ─────────────────────────── ENQUIRY (ADDED) ─────────────────────────── */}
+      {/* ─────────────────────────── ENQUIRY (UNCHANGED) ─────────────────────────── */}
       <section id="contact" className="border-b border-sky-500 bg-sky-900 py-14">
         <div className="mx-auto max-w-6xl space-y-10 px-4">
           <h2 className="text-2xl font-semibold text-slate-50">ENQUIRY</h2>
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <input className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none" placeholder="Email" />
-            <input className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none" placeholder="Company name" />
-            <input className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none" placeholder="Quantity required" />
-            <input className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none" placeholder="Country of establishment" />
-            <input className="md:col-span-2 rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none" placeholder="Phone number" />
+            <input
+              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none"
+              placeholder="Email"
+            />
+            <input
+              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none"
+              placeholder="Company name"
+            />
+            <input
+              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none"
+              placeholder="Quantity required"
+            />
+            <input
+              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none"
+              placeholder="Country of establishment"
+            />
+            <input
+              className="md:col-span-2 rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none"
+              placeholder="Phone number"
+            />
           </div>
 
           <div className="grid grid-cols-1 gap-8 border-t border-sky-500 pt-8 md:grid-cols-3">
             <div className="space-y-4 text-sm">
-              <h3 className="mb-2 text-sm font-semibold text-slate-50">Panels / shortcuts</h3>
-              <button className="w-full rounded-lg border border-sky-500 bg-slate-900 px-4 py-3 text-left text-slate-200">Certificates</button>
-              <button className="w-full rounded-lg border border-sky-500 bg-slate-900 px-4 py-3 text-left text-slate-200">Contact info</button>
+              <h3 className="mb-2 text-sm font-semibold text-slate-50">
+                Panels / shortcuts
+              </h3>
+              <button className="w-full rounded-lg border border-sky-500 bg-slate-900 px-4 py-3 text-left text-slate-200">
+                Certificates
+              </button>
+              <button className="w-full rounded-lg border border-sky-500 bg-slate-900 px-4 py-3 text-left text-slate-200">
+                Contact info
+              </button>
             </div>
 
             <div className="flex items-center justify-center">
@@ -217,7 +232,8 @@ export default function IntroductionPage() {
       {/* ───────────────────────── END ENQUIRY ───────────────────────── */}
 
       <footer className="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} ZS International · Export-focused manufacturing.
+        © {new Date().getFullYear()} ZS International · Export-focused
+        manufacturing.
       </footer>
     </main>
   );

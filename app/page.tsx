@@ -5,22 +5,21 @@ import Image from "next/image";
 
 const heroSlides = [
   {
-    src: "/hero-panel.webp",
-    alt: "Hero leather panel",
-    caption: "Export-grade leather belts and jackets",
+    src: "/shoe.webp",
+    alt: "Premium leather shoe – studio shot",
+    caption: "Export-ready leather footwear with consistent finishing",
   },
   {
-    src: "/leather-winter.webp",
-    alt: "Winter leather jacket",
-    caption: "Winter-ready collections with consistent quality",
+    src: "/shoefire.webp",
+    alt: "Heat-resistant industrial shoe",
+    caption: "High-performance footwear engineered for demanding work zones",
   },
   {
-    src: "/suede-vintage.webp",
+    src: "/shoe3.jpg",
     alt: "Vintage suede jacket",
     caption: "Suede and vintage lines for premium buyers",
   },
 ];
-
 export default function HomePage() {
   const [heroIndex, setHeroIndex] = useState(0);
 
@@ -87,7 +86,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-8 md:flex-row md:items-center">
             <div className="relative h-56 flex-1 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
               <Image
-                src="/Mens-Western-Belt-with-Embossed-Detailing-and-Ornate-Buckle-Smart-Casual-and-Evening.webp"
+                src="/shoewhite.jpeg"
                 alt="Embossed belt close-up"
                 fill
                 className="object-cover"
@@ -105,13 +104,13 @@ export default function HomePage() {
               <p>Talk about your cutting, stitching and finishing lines.</p>
             </div>
             <div className="relative h-56 flex-1 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
-              <Image src="/leather belt 2.jpg" alt="Production area" fill className="object-cover" />
+              <Image src="/shoess.jpeg" alt="Production area" fill className="object-cover" />
             </div>
           </div>
 
           <div className="flex flex-col gap-8 md:flex-row md:items-center">
             <div className="relative h-56 flex-1 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
-              <Image src="/leather jacket.webp" alt="Jacket" fill className="object-cover" />
+              <Image src="/container.jpeg" alt="Jacket" fill className="object-cover" />
             </div>
             <div className="flex-1 space-y-3 text-sm text-slate-300">
               <h2 className="text-xl font-semibold text-slate-50">Jacket lines built for export quality</h2>
@@ -140,7 +139,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             <article className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-lg shadow-black/40">
               <Image
-                src="/Mens-Western-Belt-with-Embossed-Detailing-and-Ornate-Buckle-Smart-Casual-and-Evening.webp"
+                src="/shoefire.webp"
                 alt="belt"
                 width={600}
                 height={400}
@@ -152,14 +151,14 @@ export default function HomePage() {
             </article>
 
             <article className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-lg shadow-black/40">
-              <Image src="/leather belt.jpg" alt="belt" width={600} height={400} className="h-56 w-full object-cover" />
+              <Image src="/tableshoe.jpg" alt="belt" width={600} height={400} className="h-56 w-full object-cover" />
               <div className="p-4 text-xs text-slate-300 space-y-1">
                 <h3 className="text-sm font-semibold text-slate-50">Classic everyday belt</h3>
               </div>
             </article>
 
             <article className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-lg shadow-black/40">
-              <Image src="/leather jacket.webp" alt="jacket" width={600} height={400} className="h-56 w-full object-cover" />
+              <Image src="/rockshoe.png" alt="jacket" width={600} height={400} className="h-56 w-full object-cover" />
               <div className="p-4 text-xs text-slate-300 space-y-1">
                 <h3 className="text-sm font-semibold text-slate-50">Shearling jacket line</h3>
               </div>

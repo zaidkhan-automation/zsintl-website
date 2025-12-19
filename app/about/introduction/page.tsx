@@ -82,8 +82,7 @@ export default function IntroductionPage() {
             <p>
               Started as a small tannery team with a focus on hand finishing,
               we gradually introduced mechanised processes without losing
-              control over trimming and quality. Our customers value repeatable
-              samples and consistent finishes.
+              control over trimming and quality.
             </p>
 
             <p>
@@ -119,11 +118,12 @@ export default function IntroductionPage() {
       {/* VIDEO STRIP */}
       <section className="border-t border-slate-800 bg-slate-900/50">
         <div className="mx-auto max-w-6xl px-6 py-12">
-          <h3 className="mb-6 text-lg font-semibold text-white">Factory video</h3>
+          <h3 className="mb-6 text-lg font-semibold text-white">
+            Factory video
+          </h3>
 
           <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
             <div className="aspect-video bg-black">
-              {/* videoPoster ab video ke रूप में, Image नहीं */}
               <video
                 src={videoPoster}
                 controls
@@ -144,9 +144,7 @@ export default function IntroductionPage() {
           <div className="col-span-2 space-y-4 text-sm text-slate-300">
             <p>
               We maintain batch-level traceability, inspect each carton before
-              dispatch and run third-party testing on request. For buyers who
-              need tighter tolerances, we offer pre-shipment inspection and
-              sample retention.
+              dispatch and run third-party testing on request.
             </p>
 
             <ul className="list-inside list-disc space-y-2 pl-4 text-sm text-slate-300">
@@ -171,65 +169,7 @@ export default function IntroductionPage() {
         </div>
       </section>
 
-      {/* ─────────────────────────── ENQUIRY (UNCHANGED) ─────────────────────────── */}
-      <section id="contact" className="border-b border-sky-500 bg-sky-900 py-14">
-        <div className="mx-auto max-w-6xl space-y-10 px-4">
-          <h2 className="text-2xl font-semibold text-slate-50">ENQUIRY</h2>
-
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <input
-              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none"
-              placeholder="Email"
-            />
-            <input
-              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none"
-              placeholder="Company name"
-            />
-            <input
-              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none"
-              placeholder="Quantity required"
-            />
-            <input
-              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none"
-              placeholder="Country of establishment"
-            />
-            <input
-              className="md:col-span-2 rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none"
-              placeholder="Phone number"
-            />
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 border-t border-sky-500 pt-8 md:grid-cols-3">
-            <div className="space-y-4 text-sm">
-              <h3 className="mb-2 text-sm font-semibold text-slate-50">
-                Panels / shortcuts
-              </h3>
-              <button className="w-full rounded-lg border border-sky-500 bg-slate-900 px-4 py-3 text-left text-slate-200">
-                Certificates
-              </button>
-              <button className="w-full rounded-lg border border-sky-500 bg-slate-900 px-4 py-3 text-left text-slate-200">
-                Contact info
-              </button>
-            </div>
-
-            <div className="flex items-center justify-center">
-              <button className="w-full md:w-auto rounded-full bg-sky-500 px-8 py-3 text-sm font-semibold text-slate-950 hover:bg-sky-400 shadow-lg">
-                Get quote
-              </button>
-            </div>
-
-            <div className="overflow-hidden rounded-xl border border-sky-500 bg-slate-900">
-              <iframe
-                title="Kanpur map"
-                src="https://www.google.com/maps?q=Kanpur&output=embed"
-                loading="lazy"
-                className="h-56 w-full"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* ───────────────────────── END ENQUIRY ───────────────────────── */}
+      {/* ❌ ENQUIRY REMOVED – now rendered globally from layout.tsx */}
 
       <footer className="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
         © {new Date().getFullYear()} ZS International · Export-focused

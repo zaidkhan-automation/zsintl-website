@@ -20,6 +20,7 @@ const heroSlides = [
     caption: "Suede and vintage lines for premium buyers",
   },
 ];
+
 export default function HomePage() {
   const [heroIndex, setHeroIndex] = useState(0);
 
@@ -34,7 +35,7 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
-      {/* ───────────────── HERO: FULL-BLEED IMAGE + TOP-ALIGNED OVERLAY TEXT ───────────────── */}
+      {/* ───────────────── HERO ───────────────── */}
       <section id="hero" className="relative w-full overflow-hidden">
         <div className="relative w-full h-[420px] sm:h-[520px] md:h-[640px]">
           <Image
@@ -67,10 +68,11 @@ export default function HomePage() {
                 {heroSlides.map((_, i) => (
                   <button
                     key={i}
-                    aria-label={`Go to slide ${i + 1}`}
                     onClick={() => setHeroIndex(i)}
-                    className={`h-3 w-3 rounded-full transition ${
-                      i === heroIndex ? "bg-sky-300" : "bg-white/40 hover:bg-white/70"
+                    className={`h-3 w-3 rounded-full ${
+                      i === heroIndex
+                        ? "bg-sky-300"
+                        : "bg-white/40 hover:bg-white/70"
                     }`}
                   />
                 ))}
@@ -80,123 +82,61 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ───────────────── CONTENT BLOCKS (PHOTO + TEXT, ALTERNATING) ───────────────── */}
-      <section id="infrastructure" className="border-b border-slate-900 bg-slate-950 py-12">
+      {/* ───────────────── CONTENT BLOCKS ───────────────── */}
+      <section className="border-b border-slate-900 py-12">
         <div className="mx-auto max-w-6xl flex flex-col gap-10 px-4">
           <div className="flex flex-col gap-8 md:flex-row md:items-center">
-            <div className="relative h-56 flex-1 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
-              <Image
-                src="/shoewhite.jpeg"
-                alt="Embossed belt close-up"
-                fill
-                className="object-cover"
-              />
+            <div className="relative h-56 flex-1 overflow-hidden rounded-2xl border border-slate-800">
+              <Image src="/shoewhite.jpeg" alt="Embossed leather" fill className="object-cover" />
             </div>
             <div className="flex-1 space-y-3 text-sm text-slate-300">
-              <h2 className="text-xl font-semibold text-slate-50">Clean embossing & consistent finishing</h2>
-              <p>Use this section to show macro shots of belts, stitching, edge finishing and hardware quality.</p>
+              <h2 className="text-xl font-semibold text-slate-50">
+                Clean embossing & consistent finishing
+              </h2>
+              <p>Macro shots of stitching, edges and hardware quality.</p>
             </div>
           </div>
 
           <div className="flex flex-col-reverse gap-8 md:flex-row md:items-center">
             <div className="flex-1 space-y-3 text-sm text-slate-300">
-              <h2 className="text-xl font-semibold text-slate-50">Infrastructure buyers can trust</h2>
-              <p>Talk about your cutting, stitching and finishing lines.</p>
+              <h2 className="text-xl font-semibold text-slate-50">
+                Infrastructure buyers can trust
+              </h2>
+              <p>Cutting, stitching and finishing lines.</p>
             </div>
-            <div className="relative h-56 flex-1 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
+            <div className="relative h-56 flex-1 overflow-hidden rounded-2xl border border-slate-800">
               <Image src="/shoess.jpeg" alt="Production area" fill className="object-cover" />
             </div>
           </div>
-
-          <div className="flex flex-col gap-8 md:flex-row md:items-center">
-            <div className="relative h-56 flex-1 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
-              <Image src="/container.jpeg" alt="Jacket" fill className="object-cover" />
-            </div>
-            <div className="flex-1 space-y-3 text-sm text-slate-300">
-              <h2 className="text-xl font-semibold text-slate-50">Jacket lines built for export quality</h2>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* ───────────────── VIDEO STRIP ───────────────── */}
-      <section className="border-b border-slate-900 bg-slate-950 py-12">
+      {/* ───────────────── PRODUCTS ───────────────── */}
+      <section className="border-b border-slate-900 py-12">
         <div className="mx-auto max-w-6xl px-4">
-          <h2 className="mb-4 text-xl font-semibold text-slate-50">Video</h2>
-          <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
-            <div className="flex h-60 items-center justify-center text-sm text-slate-400">
-              Factory / process video placeholder
-            </div>
-          </div>
-        </div>
-      </section>
+          <h2 className="mb-6 text-2xl font-semibold">Highlight products</h2>
 
-      {/* ───────────────── MINI PRODUCTS STRIP ───────────────── */}
-      <section id="products" className="border-b border-slate-900 bg-slate-950 py-12">
-        <div className="mx-auto max-w-6xl px-4">
-          <h2 className="mb-6 text-2xl font-semibold text-slate-50">Highlight products</h2>
-
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <article className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-lg shadow-black/40">
-              <Image
-                src="/shoefire.webp"
-                alt="belt"
-                width={600}
-                height={400}
-                className="h-56 w-full object-cover"
-              />
-              <div className="p-4 text-xs text-slate-300 space-y-1">
-                <h3 className="text-sm font-semibold text-slate-50">Western embossed belt</h3>
-              </div>
+          <div className="grid gap-8 sm:grid-cols-3">
+            <article className="rounded-2xl border border-slate-800 overflow-hidden">
+              <Image src="/shoefire.webp" alt="product" width={600} height={400} className="h-56 w-full object-cover" />
+              <div className="p-4 text-sm">Western embossed belt</div>
             </article>
 
-            <article className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-lg shadow-black/40">
-              <Image src="/tableshoe.jpg" alt="belt" width={600} height={400} className="h-56 w-full object-cover" />
-              <div className="p-4 text-xs text-slate-300 space-y-1">
-                <h3 className="text-sm font-semibold text-slate-50">Classic everyday belt</h3>
-              </div>
+            <article className="rounded-2xl border border-slate-800 overflow-hidden">
+              <Image src="/tableshoe.jpg" alt="product" width={600} height={400} className="h-56 w-full object-cover" />
+              <div className="p-4 text-sm">Classic everyday belt</div>
             </article>
 
-            <article className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-lg shadow-black/40">
-              <Image src="/rockshoe.png" alt="jacket" width={600} height={400} className="h-56 w-full object-cover" />
-              <div className="p-4 text-xs text-slate-300 space-y-1">
-                <h3 className="text-sm font-semibold text-slate-50">Shearling jacket line</h3>
-              </div>
+            <article className="rounded-2xl border border-slate-800 overflow-hidden">
+              <Image src="/rockshoe.png" alt="product" width={600} height={400} className="h-56 w-full object-cover" />
+              <div className="p-4 text-sm">Shearling jacket line</div>
             </article>
           </div>
         </div>
       </section>
 
-      {/* ───────────────── CONTACT SECTION — FULL BLUE BORDERS ───────────────── */}
-      <section id="contact" className="border-b border-sky-500 bg-sky-900 py-14">
-        <div className="mx-auto max-w-6xl space-y-10 px-4">
-          <h2 className="text-2xl font-semibold text-slate-50">ENQUIRY</h2>
-
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <input className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500" placeholder="Email" />
-            <input className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500" placeholder="Company name" />
-            <input className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500" placeholder="Quantity required" />
-            <input className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500" placeholder="Country of establishment" />
-            <input className="md:col-span-2 rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500" placeholder="Phone number" />
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 border-t border-sky-500 pt-8 md:grid-cols-3">
-            <div className="space-y-4 text-sm">
-              <h3 className="mb-2 text-sm font-semibold text-slate-50">Panels / shortcuts</h3>
-              <button className="w-full rounded-lg border border-sky-500 bg-slate-900 px-4 py-3 text-left text-slate-200">Certificates</button>
-              <button className="w-full rounded-lg border border-sky-500 bg-slate-900 px-4 py-3 text-left text-slate-200">Contact info</button>
-            </div>
-
-            <div className="flex items-center justify-center">
-              <button className="w-full rounded-full bg-sky-500 px-8 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-sky-500/40 hover:bg-sky-400 md:w-auto">Get quote</button>
-            </div>
-
-            <div className="overflow-hidden rounded-xl border border-sky-500 bg-slate-900">
-              <iframe title="Kanpur map" src="https://www.google.com/maps?q=Kanpur&output=embed" loading="lazy" className="h-56 w-full" />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ❌ ENQUIRY SECTION REMOVED
+          ✔ Now coming globally from layout.tsx */}
 
       <footer className="bg-sky-900 py-6 text-center text-xs text-slate-500">
         © {new Date().getFullYear()} LeatherBrand · Export-focused leather manufacturing.

@@ -1,12 +1,12 @@
 // app/contact/page.tsx
 import Image from "next/image";
 
-const heroSrc = "/hero-panel.webp"; // edge-to-edge photo on top
+const heroSrc = "/hero-panel.webp";
 
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
-      {/* ───────── PANEL + EDGE-TO-EDGE PHOTO ("CONTACT") ───────── */}
+      {/* ───────── HERO / CONTACT INTRO ───────── */}
       <section className="relative w-full overflow-hidden border-b border-slate-800">
         <div className="relative h-[420px] sm:h-[520px] md:h-[640px]">
           <Image
@@ -17,7 +17,7 @@ export default function ContactPage() {
             className="object-cover"
           />
 
-          {/* gradient overlay for text readability */}
+          {/* gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/70" />
 
           {/* overlay text */}
@@ -40,73 +40,33 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ───────── ENQUIRY FORM BLOCK (as per sketch) ───────── */}
-      <section className="border-b border-sky-500 bg-sky-900 py-14">
-        <div className="mx-auto max-w-6xl space-y-10 px-4">
-          <h2 className="text-2xl font-semibold text-slate-50">ENQUIRY</h2>
-
-          {/* first row: NAME / PHONE / EMAIL */}
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            <input
-              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500"
-              placeholder="Name"
-            />
-            <input
-              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500"
-              placeholder="Phone"
-            />
-            <input
-              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500"
-              placeholder="Email"
-            />
-          </div>
-
-          {/* second row: SUBJECT / QUANTITY */}
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <input
-              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500"
-              placeholder="Subject (e.g. trial order, OEM, private label)"
-            />
-            <input
-              className="rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500"
-              placeholder="Quantity (pairs / pcs / monthly volume)"
-            />
-          </div>
-
-          {/* remarks */}
-          <div>
-            <textarea
-              rows={5}
-              className="w-full rounded-lg border border-sky-500 bg-slate-900 p-3 text-sm text-slate-100 outline-none focus:ring-2 focus:ring-sky-500"
-              placeholder="Remarks (target markets, product types, timelines, any specs)"
-            />
-          </div>
-
-          {/* bottom row – colour-change style blocks from sketch */}
-          <div className="grid grid-cols-1 gap-6 pt-6 md:grid-cols-2">
-            <div className="rounded-xl border border-sky-500 bg-slate-900/60 p-4 text-sm text-slate-200 transition-colors hover:bg-sky-900/40">
-              <div className="text-xs font-semibold uppercase tracking-wide text-sky-300">
-                Sales & sourcing
-              </div>
-              <p className="mt-2 text-sm">
-                For new enquiries, RFQs and price bands for different SKUs.
-              </p>
+      {/* ───────── CONTEXT / INFO STRIP (optional but useful) ───────── */}
+      <section className="border-b border-slate-800 bg-slate-900/40 py-10">
+        <div className="mx-auto max-w-6xl grid gap-6 px-6 md:grid-cols-2">
+          <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5 text-sm text-slate-300">
+            <div className="text-xs font-semibold uppercase tracking-wide text-sky-300">
+              Sales & sourcing
             </div>
-            <div className="rounded-xl border border-sky-500 bg-slate-900/60 p-4 text-sm text-slate-200 transition-colors hover:bg-sky-900/40">
-              <div className="text-xs font-semibold uppercase tracking-wide text-sky-300">
-                Logistics & documents
-              </div>
-              <p className="mt-2 text-sm">
-                For shipment status, packing details, certifications and
-                paperwork.
-              </p>
+            <p className="mt-2">
+              For new enquiries, RFQs and pricing bands across SKUs and volumes.
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5 text-sm text-slate-300">
+            <div className="text-xs font-semibold uppercase tracking-wide text-sky-300">
+              Logistics & documents
             </div>
+            <p className="mt-2">
+              For shipment timelines, packing standards, certifications and export
+              documentation.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-sky-900 py-6 text-center text-xs text-slate-500">
+      {/* ❌ ENQUIRY REMOVED – rendered globally from layout.tsx */}
+
+      <footer className="bg-slate-950 border-t border-slate-800 py-8 text-center text-xs text-slate-500">
         © {new Date().getFullYear()} ZS International · Contact.
       </footer>
     </main>

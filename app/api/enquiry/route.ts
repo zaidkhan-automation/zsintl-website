@@ -1,13 +1,14 @@
 export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
+// @ts-ignore — nodemailer has no types in prod build, this is intentional
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   try {
     const data = await req.json();
 
-    // basic validation (minimum sanity)
+    // minimal sanity check
     if (!data.email && !data.phone) {
       return NextResponse.json(
         { success: false, error: "Missing contact details" },
@@ -18,8 +19,8 @@ export async function POST(req: Request) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASS,
+        user: process.env.MAIL_USER!, // non-null assertion for TS
+        pass: process.env.MAIL_PASS!,
       },
     });
 
@@ -32,15 +33,15 @@ Phone    : ${data.phone || "-"}
 Company  : ${data.company || "-"}
 Quantity : ${data.quantity || "-"}
 Country  : ${data.country || "-"}
-Source   : ${data.source || "unknown"}
+Source   : ${data.source || "website"}
 
 Remarks:
 ${data.remarks || "-"}
-`;
+    `;
 
     await transporter.sendMail({
-      from: `"LeatherBrand Enquiry" <${process.env.MAIL_USER}>`,
-      to: process.env.MAIL_TO,
+      from: `"LeatherBrand Enquiry" <${process.env.MAIL_USER!}>`,
+      to: process.env.MAIL_TO!,
       subject: `New Get Quote Enquiry (${data.source || "website"})`,
       text: message,
     });
